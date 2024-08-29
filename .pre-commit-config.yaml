@@ -1,0 +1,35 @@
+repos:
+# 添加isort来自动调整import顺序
+-   repo: https://github.com/pycqa/isort
+    rev: '5.13.2'
+    hooks:
+    -   id: isort
+        files: '\.py$'
+
+# 添加autoflake来移除未使用的import
+-   repo: https://github.com/myint/autoflake
+    rev: 'v1.4'
+    hooks:
+    -   id: autoflake
+        args: ['--remove-all-unused-imports', '--in-place']
+        files: '\.py$'
+
+-   repo: https://github.com/psf/black
+    rev: '24.4.2'
+    hooks:
+    -   id: black
+        files: '\.py$'
+
+-   repo: https://github.com/hadialqattan/pycln
+    rev: 'v2.4.0'
+    hooks:
+    -   id: pycln
+        files: '\.py$'
+
+-   repo: https://github.com/pre-commit/pre-commit-hooks
+    rev: 'v4.6.0'
+    hooks:
+    -   id: check-ast
+    -   id: check-merge-conflict
+    -   id: trailing-whitespace
+        files: '\.py$'

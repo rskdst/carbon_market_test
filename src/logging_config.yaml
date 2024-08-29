@@ -1,0 +1,25 @@
+version: 1
+disable_existing_loggers: False
+formatters:
+  simple:
+    format: "%(asctime)s - %(name)s - %(levelname)s - %(message)s - %(threadName)s"
+  detailed:
+    format: "%(asctime)s - %(name)s - %(levelname)s - %(message)s - %(threadName)s (%(filename)s:%(lineno)d)"
+handlers:
+  console:
+    class: logging.StreamHandler
+    level: INFO
+    formatter: simple
+    stream: ext://sys.stdout
+  file:
+    class: logging.handlers.RotatingFileHandler
+    level: INFO
+    formatter: detailed
+    filename: "./logs/application.log"
+    maxBytes: 10485760  # 10MB
+    backupCount: 3
+    encoding: utf-8
+
+root:
+  level: INFO
+  handlers: [console,file]

@@ -1,0 +1,15 @@
+#!/bin/bash
+
+# Set environment variable. Please replace the placeholders with your own values.
+export CARBON_RUN_MODE="<TBA>"
+export CARBON_DATA_YEAR="<TBA>"
+export CARBON_OSS_ACCESS_KEY_ID="<TBA>"
+export CARBON_OSS_ACCESS_KEY_SECRET="<TBA>"
+export CARBON_OSS_BUCKET_NAME="<TBA>"
+export CARBON_OSS_ENDPOINT="<TBA>"
+export CARBON_OSS_BASE_PATH="<TBA>"
+
+# Execute Python script
+
+# 执行 Python 脚本
+python3 src/main.py
