@@ -1,0 +1,18 @@
+service: my-service  # 服务名称
+
+provider:
+  name: aliyun  # 服务提供商
+  runtime: python3.10  # 运行时环境
+  region: cn-hangzhou  # 地域
+  functionCompute:
+    serviceName: my-service-name  # 函数计算服务名称
+    functionName: my-function-name  # 函数名称
+    handler: index.handler  # 处理器入口点
+    memorySize: 128  # 内存大小
+    timeout: 30  # 超时时间
+
+functions:
+  main:
+    handler: src.main  # 处理器函数
+    events:
+      - http: ANY /main
